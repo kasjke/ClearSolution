@@ -1,13 +1,13 @@
 package com.example.clearsolutions.controller;
 
 import com.example.clearsolutions.entity.User;
-import com.example.clearsolutions.exception.IllStateException;
 import com.example.clearsolutions.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.Date;
 import java.util.List;
 

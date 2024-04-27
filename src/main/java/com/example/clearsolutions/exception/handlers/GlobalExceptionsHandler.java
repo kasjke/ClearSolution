@@ -1,4 +1,4 @@
-package com.example.clearsolutions.exception.controller;
+package com.example.clearsolutions.exception.handlers;
 
 import com.example.clearsolutions.exception.IllStateException;
 import com.example.clearsolutions.exception.NotFoundException;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 @Slf4j
-public class ExceptionsController {
+public class GlobalExceptionsHandler {
 
     @ExceptionHandler(NotFoundException.class)
     ResponseEntity<ErrorMessage> notFoundHandler(NotFoundException e) {
@@ -20,8 +20,8 @@ public class ExceptionsController {
 
     ResponseEntity<ErrorMessage> returnResponse(String message, HttpStatus status) {
         log.error(message);
-        ErrorMessage statusMessage = new ErrorMessage(message);
-        return new ResponseEntity<>(statusMessage,status) ;
+        ErrorMessage errorMessage = new ErrorMessage(message);
+        return new ResponseEntity<>(errorMessage,status) ;
     }
 
     @ExceptionHandler(IllStateException.class)

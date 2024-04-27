@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(User user,Long id) {
+    public User updateUser(User user, Long id) {
         User oldUser = userRepository.findById(id)
                 .orElseThrow(NotFoundException::new);
 
@@ -63,8 +63,8 @@ public class UserServiceImpl implements UserService {
         if (user.getPhoneNumber() != null) {
             oldUser.setPhoneNumber(user.getPhoneNumber());
         }
-
-        return userRepository.save(oldUser);
+        userRepository.save(oldUser);
+        return oldUser;
     }
 
     @Override

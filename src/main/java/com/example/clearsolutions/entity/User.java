@@ -1,4 +1,5 @@
 package com.example.clearsolutions.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,6 +10,8 @@ import java.util.Date;
 @Builder
 @Getter
 @Setter
+@Data
+
 @Table(name = "users")
 @Entity
 public class User {
@@ -30,4 +33,5 @@ public class User {
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
 }
